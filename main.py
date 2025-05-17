@@ -1,21 +1,25 @@
-# main.py
 import discord
-from discord.ext import commands
+from discord import app_commands
 import hashlib
+import os
 
-intents = discord.Intents.default()
-intents.message_content = True
+#check
+TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
-bot = commands.Bot(command_prefix="/", intents=intents)
+class MyClient(discord.Client):
+    def __init__(self):
+        super().__init__(intents=discord.Intents.all())
+        self.tree = app_commands.CommandTree(self)
 
-@bot.event
-async def on_ready():
-    print(f"Logged in as {bot.user}")
+    async def setup_hook(self):
+        await self.tree.sync()
 
-@bot.command()
-async def hash(ctx, *, message: str):
-    hashed = hashlib.sha256(message.encode()).hexdigest()
-    await ctx.send(f" SHA-256: `{hashed}`")
+client = MyClient()
 
-# Thay YOUR_TOKEN_HERE bằng token thật của bot discord ở dưới nha
-bot.run("YOUR_TOKEN_HERE")
+@client.tree.command(name="hash", description="Mã hóa SHA-256 chuỗi văn bản")
+@app_commands.describe(text="Chuỗi cần mã hóa")
+async def hash_sha256(interaction: discord.Interaction, text: str):
+    hashed = hashlib.sha256(text.encode()).hexdigest()
+    await interaction.response.send_message(f"SHA-256: `{hashed}`")
+
+client.run(TOKEN)
