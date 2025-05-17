@@ -11,7 +11,6 @@ pip install -U discord.py
 
 3. Install Python 3.10 or later (recommended : 3.10)
 
-# If you want to use it quickly:
 
 
 
