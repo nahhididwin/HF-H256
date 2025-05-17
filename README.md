@@ -9,4 +9,12 @@ pip install -U discord.py
 
 2. Create your discord bot on Discord Developer Portal
 
-3. 
+3. Install Python 3.10 or later (recommended : 3.10)
+
+
+
+
+
+
+
+
