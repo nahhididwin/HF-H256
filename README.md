@@ -2,7 +2,7 @@
 A useful hash support discord bot, Hash function using SHA-256.
 
 
-# How to use?
+# How to config HF-H256?
 
 1. Open Terminal (CMD/Powershell), and run this :
 pip install -U discord.py
