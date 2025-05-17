@@ -15,7 +15,7 @@ async def on_ready():
 @bot.command()
 async def hash(ctx, *, message: str):
     hashed = hashlib.sha256(message.encode()).hexdigest()
-    await ctx.send(f"🔐 SHA-256: `{hashed}`")
+    await ctx.send(f" SHA-256: `{hashed}`")
 
 # Thay YOUR_TOKEN_HERE bằng token thật của bot discord ở dưới nha
 bot.run("YOUR_TOKEN_HERE")
