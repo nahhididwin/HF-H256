@@ -1,6 +1,9 @@
 # HF-H256
 A useful hash support discord bot, Hash function using SHA-256.
 
+# Invite Bot
+
+https://discord.com/oauth2/authorize?client_id=1373171700849446992
 
 # How to edit source code HF-H256?
 
