@@ -1,3 +1,5 @@
+MIT License
+
 Copyright 2025 Dang Dinh Phu Hung (Đặng Đình Phú Hưng) 
 GitHub: https://github.com/nahhididwin
 Email: ghttraining@outlook.com
